@@ -1,0 +1,23 @@
+.wrapper {
+  display: flex;
+}
+.expense {
+  background-color:  blanchedalmond;
+  width: 100vw;
+  height: 100vh;
+}
+.monthly-expense {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 40px;
+}
+.category-expense {
+  text-align: center;
+  margin-top: 40px;
+}
+.create-record {
+  bottom: 80px;
+  right: 120px;
+  position: fixed;
+  padding: 15px;
+}
