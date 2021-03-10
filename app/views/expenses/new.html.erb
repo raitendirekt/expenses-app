@@ -1,0 +1,9 @@
+<%= form_with model: @expense, url:expenses_path, local: true do |f| %>
+  <div class="expense-box">
+    出費を記録する
+    <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"}) %>
+    <%= f.text_area :memo, class:"memo", placeholder:"memo" %>
+    <%= f.text_field :amount, class:"amount-input", id:"expense-amount", placeholder:"例）300" %>
+    <%= f.submit "記録する" ,class:"btn" %>
+  </div>
+<% end %>

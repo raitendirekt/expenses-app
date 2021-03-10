@@ -6,12 +6,19 @@
     今月の出費20000円
   </div>
   <div class="category-expense">
-    <ul>
-      <li>交際費 3000円</li>
-      <li>交通費 2000円</li>
-    </ul>
+    <% @expenses.each do |expense| %>
+      <div class="expense">
+        <div class="expense-category">
+          <%= expense.category.name %>
+        </div>
+        <div class="expense-amount">
+          <%= expense.amount %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 <div class="create-record">
-  <a href="#">記録する</a>
+  <%= link_to "記録する", new_expense_path, class:"post" %>
 </div>
