@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "expenses#index"
+  root to: "top#index"
   resources :expenses, only: [:index, :new, :create]
 end

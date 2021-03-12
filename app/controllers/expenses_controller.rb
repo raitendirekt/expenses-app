@@ -1,7 +1,12 @@
 class ExpensesController < ApplicationController
   before_action :move_to_index, except: :index
   def index
-    @expenses = Expense.order("created_at DESC")
+    @expenses = Expense.all#where(user_id: current_user.id)
+    time = Time.now
+    @this_month = time.month
+    #query = "SELECT * FROM expenses"
+    #@expenses = Expense.find_by_sql(query)
+    #@month_sum = Expense.all.sum(:amount)
   end
 
   def new

@@ -1,0 +1,26 @@
+.expense {
+  justify-content: center;
+  flex-direction: column;
+}
+
+.expense-created_at {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.expense-category {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.expense-amount {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.lead-to-login {
+  vertical-align: middle;
+  text-align: center;
+  padding-top: 90px;
+  font-size: 20px;
+}
