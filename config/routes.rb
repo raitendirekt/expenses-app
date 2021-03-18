@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root to: "top#index"
   resources :expenses, only: [:index, :new, :create]
   resources :category, only: :index
+  resources :month, only: :index
 end
