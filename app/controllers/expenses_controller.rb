@@ -22,7 +22,7 @@ class ExpensesController < ApplicationController
   private
 
   def expense_params
-    params.require(:expense).permit(:category_id, :memo, :amount).merge(
+    params.require(:expense).permit(:category_id, :memo, :amount, :date).merge(
       user_id: current_user.id
     )
   end

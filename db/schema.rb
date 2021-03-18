@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2021_03_10_060446) do
     t.integer "category_id", null: false
     t.text "memo", null: false
     t.integer "amount", null: false
+    t.date "date", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

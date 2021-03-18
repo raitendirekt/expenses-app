@@ -5,7 +5,7 @@
       <% if user_signed_in? %>
         <li><%= link_to 'top', root_path, class: "top-link"%>
         <li><%= link_to 'カテゴリー別', category_index_path, class: "category-list" %></li>
-        <li><%= link_to '月別', "#", class: "month-list" %></li>
+        <li><%= link_to '月別', month_index_path, class: "month-list" %></li>
       <% end %>
     </ul>
     <ul class='lists-right'>

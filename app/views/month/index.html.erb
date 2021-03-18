@@ -1,0 +1,67 @@
+<%= render "shared/header" %>
+<div class="wrapper">
+
+  <div class="top">
+
+    <div class="expense-header">
+    </div>
+    <div class="create-record">
+      <%= link_to "記録する", new_expense_path, class:"post" %>
+    </div>
+    <% if user_signed_in? %>
+      <div class="month-main">
+        <div class="monthly-expense">
+          <%= "#{@this_year}年の出費#{@year_sum}円" %>
+        </div>
+        <div class="category-expense">
+        <table>
+          <tr>
+            <th>月</th><th>金額</th>
+          </tr>
+          <div class="expense">
+          <% @expenses.each do |expense| %>
+          <tr>
+            <%# 同じカテゴリーが複数存在するか確認 %>
+            <% category_counter = 0 %>
+            <% @expenses.each do |fake| %>
+              <% if expense.category  == fake.category %>
+                <% category_counter += 1 %>
+              <% end %>
+            <% end %>
+
+            <% @months.each do |month| %>
+              <td><%= "#{month}月" %></td>
+
+              <% amounts = [] %>
+              <% @expenses.each do |dummy| %>
+
+                <% if expense.category == dummy.category %>
+                  <% amounts << dummy.amount %>
+                <% end %>
+
+              <% end %>
+
+              <% sum = 0 %>
+              <% amounts.each do |n| %>
+                <% sum += n %>
+              <% end %>
+
+              <td><%= "#{sum}円" %></td>
+              <td><%= expense.amount %></td>
+              
+            <% end %>
+
+          </div>
+          </tr>
+          <% end %>
+          </div>
+        </table>
+        </div>
+      </div>
+    <% else %>
+      <div class="lead-to-login">
+        <%= link_to 'ログインしてください', new_user_session_path, class: "login" %>
+      </div>
+    <% end %>
+  </div>
+</div>

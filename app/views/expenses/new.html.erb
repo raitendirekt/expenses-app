@@ -4,6 +4,7 @@
     <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"}) %>
     <%= f.text_area :memo, class:"memo", placeholder:"memo" %>
     <%= f.text_field :amount, class:"amount-input", id:"expense-amount", placeholder:"例）300" %>
+    <%= f.date_field :date, class:"expensed-day" %>
     <%= f.submit "記録する" ,class:"btn" %>
   </div>
 <% end %>
