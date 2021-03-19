@@ -1,0 +1,6 @@
+<div class="side-bar">
+  <% if user_signed_in? %>
+    <li><%= link_to 'カテゴリー別', category_index_path, class: "category-list" %></li>
+    <li><%= link_to '月別', month_index_path, class: "month-list" %></li>
+  <% end %>
+</div>
