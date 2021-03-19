@@ -8,6 +8,8 @@ class ExpensesController < ApplicationController
 
   def new
     @expense = Expense.new
+    require "date"
+    @now = Date.today
   end
 
   def create
@@ -17,6 +19,26 @@ class ExpensesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    @expense = Expense.find(params[:id])
+  end
+
+  def update
+    expense = Expense.find(params[:id])
+    expense.update(expense_params)
+    if expense.save
+			redirect_to "/users/#{current_user.id}"
+		else
+			render "edit"
+		end
+  end
+
+  def destroy
+    expense = Expense.find(params[:id])
+    expense.destroy
+    redirect_to "/users/#{current_user.id}"
   end
 
   private

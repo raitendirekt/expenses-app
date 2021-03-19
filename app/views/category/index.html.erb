@@ -11,7 +11,7 @@
     <% if user_signed_in? %>
       <div class="month-main">
         <div class="monthly-expense">
-          <%= "#{@this_month}月の出費#{@month_sum}円" %>
+          <%= "#{@this_month}月カテゴリー別" %>
         </div>
         <div class="category-expense">
         <table>
@@ -36,7 +36,7 @@
                 <td><%= expense.category.name %></td>
               </div>
               <div class="expense-amount">
-                <td><%= expense.amount %></td>
+                <td><%= "#{expense.amount}円" %></td>
               </div>
 
               <%# 表示ずみのカテゴリーとして登録 %>

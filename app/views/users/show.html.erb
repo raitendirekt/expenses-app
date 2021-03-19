@@ -9,12 +9,15 @@
       </div>
       <div class="month-main">
         <div class="monthly-expense">
-          <%= "#{@this_month}月の出費#{@month_sum}円" %>
+          <%= "My Page" %>
+        </div>
+        <div class="user-edit">
+          <%= link_to "プロフィールを編集する", edit_user_registration_path %>
         </div>
         <div class="category-expense">
         <table>
           <tr>
-            <th>出費日</th><th>カテゴリー</th><th>メモ</th><th>金額</th>
+            <th>出費日</th><th>カテゴリー</th><th>メモ</th><th>金額</th><th>編集</th><th>削除</th>
           </tr>
           <% @expenses.each do |expense| %>
           <tr>
@@ -30,6 +33,10 @@
               </div>
               <div class="expense-amount">
                 <td><%= "#{expense.amount}円" %></td>
+              </div>
+              <div>
+                <td><%= link_to "編集", edit_expense_path(expense.id) %></td>
+                <td><%= link_to "削除", expense_path(expense.id), method: :delete %></td>
               </div>
             </div>
            </tr>
