@@ -1,17 +1,19 @@
 .post {
-  top:  120px;
+  bottom:  120px;
   right: 50px;
   position: fixed;
   padding: 15px;
-  color: black;
+  color: #f0fffe;
   text-decoration: none;
   text-align: center;
   overflow: hidden;
   transition: .4s;
+  background: #a98e3e;
+  border-radius: 50px;
 }
 
 .post:hover {
-  background: moccasin;
+  background: #bfa146;
 }
 
 .expense {

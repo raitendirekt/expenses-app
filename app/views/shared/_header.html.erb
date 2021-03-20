@@ -1,14 +1,7 @@
 <%# CSS・・・assets/stylesheets/shared/header.css %>
-<header class='top-page-header'>
+<header>
   <div class='nav'>
-    <ul class='lists-left'>
-      <% if user_signed_in? %>
-        <li><%= link_to 'top', root_path, class: "top-link"%>
-        <li><%= link_to 'カテゴリー別', category_index_path, class: "category-list" %></li>
-        <li><%= link_to '月別', month_index_path, class: "month-list" %></li>
-      <% end %>
-    </ul>
-    <ul class='lists-right'>
+    <ul class='lists'>
       <% if user_signed_in? %>
         <li><%= link_to current_user.nickname, "/users/#{current_user.id}", class: "user-nickname" %></li>
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>

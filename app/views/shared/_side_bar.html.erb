@@ -1,6 +1,11 @@
-<div class="side-bar">
+<div class="side-bar-header">
+  <%= link_to 'ExpenseApp', root_path, class: "app-title" %>
+</div>
+<div class="sum-up">
   <% if user_signed_in? %>
-    <li><%= link_to 'カテゴリー別', category_index_path, class: "category-list" %></li>
-    <li><%= link_to '月別', month_index_path, class: "month-list" %></li>
+    <ul class="by">
+      <li><%= link_to 'カテゴリー別', category_index_path, class: "category-list" %></li>
+      <li><%= link_to '月別', month_index_path, class: "month-list" %></li>
+    </ul>
   <% end %>
 </div>
