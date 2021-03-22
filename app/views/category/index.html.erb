@@ -1,0 +1,75 @@
+<div class="wrapper">
+  <div class="side-bar">
+    <%= render "shared/side_bar" %>
+  </div>
+  <div class="top-table">
+    <%= render "shared/header" %>
+    <div class="create-record">
+      <%= link_to "記録する", new_expense_path, class:"post" %>
+    </div>
+    <a class="month">
+      <%= "#{@this_month}月" %>
+    </a>
+    <table>
+      <tr>
+        <th>カテゴリー</th><th>金額</th>
+      </tr>
+      <div class="expense">
+      <% check_category = [] %>
+      <% @expenses.each do |expense| %>
+      <tr>
+        <%# 同じカテゴリーが複数存在するか確認 %>
+        <% category_counter = 0 %>
+        <% @expenses.each do |fake| %>
+          <% if expense.category  == fake.category %>
+            <% category_counter += 1 %>
+          <% end %>
+        <% end %>
+
+        <%# そのカテゴリーがuniqueである場合に、カテゴリー名と出費額を表示する %>
+        <% if category_counter == 1 %>
+          <div class="expense-category">
+            <td><%= expense.category.name %></td>
+          </div>
+          <div class="expense-amount">
+            <td><%= "#{expense.amount}円" %></td>
+          </div>
+
+          <%# 表示ずみのカテゴリーとして登録 %>
+          <% check_category << expense.category %>
+
+        <%# 同じカテゴリーが二つ以上存在する時の処理 %>
+        <%# そのカテゴリーの表示が初めてか確認し、そうであったら表示する %>
+        <% elsif check_category.exclude?(expense.category) %>
+
+          <div class="expense-category">
+            <td><%= expense.category.name %></td>
+          </div>
+          
+          <%# そのカテゴリーの出費額の合計を表示する %>
+          <div class="expense-amount">
+            <% amounts = [] %>
+            <% @expenses.each do |dummy| %>
+              <% if expense.category == dummy.category %>
+                <% amounts << dummy.amount %>
+              <% end %>
+            <% end %>
+            <% sum = 0 %>
+            <% amounts.each do |n| %>
+              <% sum += n %>
+            <% end %>
+            <td><%= "#{sum}円" %></td>
+          </div>
+
+          <%# 表示ずみのカテゴリーとして登録 %>
+          <% check_category << expense.category %>
+
+        <% end %>
+
+      </div>
+      </tr>
+      <% end %>
+      </div>
+    </table>
+  </div>
+</div>

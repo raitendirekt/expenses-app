@@ -1,23 +1,119 @@
 .wrapper {
   display: flex;
 }
-.expense {
-  background-color:  blanchedalmond;
-  width: 100vw;
+
+.side-bar {
+  display: block;
+  background-color: #141f4a;
+  width: 200px;
   height: 100vh;
 }
-.monthly-expense {
-  text-align: center;
-  margin-top: 40px;
-  font-size: 40px;
+
+.side-bar-header {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.category-expense {
-  text-align: center;
-  margin-top: 40px;
+
+.app-title {
+  text-decoration: none;
+  color: #f8f9e9;
+  font-size: large;
+  font-weight: bold;
 }
-.create-record {
-  bottom: 80px;
-  right: 120px;
-  position: fixed;
-  padding: 15px;
+
+.sum-up {
+  padding: 20px;
+  text-align: center;
+  background-color: #182c54;
+  height: calc(100vh - 70px);
+}
+
+.category-list {
+  display: block;
+  text-decoration: none;
+  color: #a4a4a9;
+  margin-bottom: 10px;
+}
+
+.month-list {
+  display: block;
+  text-decoration: none;
+  color: #a4a4a9;
+  margin-bottom: 10px;
+}
+
+.top-table {
+  background-color:  #eaedf6;
+  width: calc(100vw - 200px);
+  height: 100vh;
+}
+
+header {
+  padding: 2vh 15vw;
+  margin-bottom: 20px;
+  background-color: #d8dbde;
+  height: 70px;
+}
+
+.nav {
+  font-size: 18px;
+  padding: 1vh 0;
+  display: flex;
+}
+
+.lists {
+  display: flex;
+  list-style: none;
+  margin-left: auto;
+}
+
+.user-nickname {
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #333333;
+  font-weight: bold;
+}
+
+
+.logout {
+  text-decoration: none;
+  color: #333333;
+}
+
+.login {
+  text-decoration: none;
+  line-height: 32px;
+  margin-right: 3vw;
+  color: #333333;
+}
+
+.sign-up {
+  text-decoration: none;
+  color: #333333;
+}
+
+.month {
+  font-size: large;
+  margin: 40px;
+  padding: 30px;
+  display: inline;
+}
+
+.title {
+  margin-left: 50px;
+}
+
+.expense-box {
+  margin-left: 100px;
+  margin-top: 100px;
+}
+
+.category {
+  display: block;
+}
+
+.user-edit {
+  margin-left: 10px;
 }

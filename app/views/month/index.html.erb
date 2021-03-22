@@ -1,0 +1,40 @@
+<div class="wrapper">
+  <div class="side-bar">
+    <%= render "shared/side_bar" %>
+  </div>
+  <div class="top-table">
+    <%= render "shared/header" %>
+    <div class="create-record">
+      <%= link_to "記録する", new_expense_path, class:"post" %>
+    </div>
+
+    <a class="month">
+      <%= "#{@this_year}年" %>
+    </a>
+    <table>
+      <tr>
+        <th>月</th><th>金額</th>
+      </tr>
+      <div class="expense">
+      <tr>
+      <% @months.each do |month| %>
+        <td><%= "#{month}月" %></td>
+        <% amounts = [] %>
+        <% @expenses.each do |expense| %>
+          <% if expense.date.month == month %>
+            <% amounts << expense.amount %>
+          <% end %>
+        <% end %>
+        <% sum = 0 %>
+        <% amounts.each do |n| %>
+          <% sum += n %>
+        <% end %>
+        <td><%= "#{sum}円" %></td>
+      </tr>
+      </div>
+      <% end %>
+      <td><%= "#{@this_year}年の合計" %></td><td><%= "#{@year_sum}円" %></td>
+      </div>
+    </table>
+  </div>
+</div>

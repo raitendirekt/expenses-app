@@ -1,0 +1,44 @@
+<div class="wrapper">
+  <div class="side-bar">
+    <%= render "shared/side_bar" %>
+  </div>
+  <div class="top-table">
+    <%= render "shared/header" %>
+    <% if user_signed_in? %>
+      <div class="create-record">
+        <%= link_to "記録する", new_expense_path, class:"post" %>
+      </div>
+      <a class="month">
+        <%= "#{@this_month}月" %>
+      </a>
+      <table>
+        <tr>
+          <th>出費日</th><th>カテゴリー</th><th>メモ</th><th>金額</th>
+        </tr>
+        <% @expenses.each do |expense| %>
+        <tr>
+          <div class="expense">
+            <div class="expense-created_at">
+              <td><%= "#{expense.date.month}月#{expense.date.day}日" %></td>
+            </div>
+            <div class="expense-category">
+              <td><%= expense.category.name %></td>
+            </div>
+            <div class="expense-memo">
+              <td><%= expense.memo %></td>
+            </div>
+            <div class="expense-amount">
+              <td><%= "#{expense.amount}円" %></td>
+            </div>
+          </div>
+          </tr>
+        <% end %>
+        <td colspan="3">合計</td><td><%= "#{@month_sum}円" %></td>
+      </table>
+    <% else %>
+      <div class="lead-to-login">
+          <%= link_to 'ログインしてください', new_user_session_path, class: "login" %>
+      </div>
+    <% end %>
+  </div>
+</div>

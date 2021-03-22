@@ -1,0 +1,32 @@
+<div class="wrapper">
+  <div class="side-bar">
+    <%= render "shared/side_bar" %>
+  </div>
+  <div class="top-table">
+    <%= render "shared/header" %>
+    <div class="title">出費を編集する</div>
+    <%= form_with model: @expense, url:expense_path, local: true do |f| %>
+      <div class="expense-box">
+        <div>
+          <div>カテゴリーを選んでください</div>
+          <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"}) %>
+        </div>
+        <div>
+          <div>メモ（任意）</div>
+          <%= f.text_area :memo, class:"memo", placeholder:"memo" %>
+        </div>
+        <div>
+          <div>出費額を入力してください</div>
+          <%= f.text_field :amount, class:"amount-input", id:"expense-amount", placeholder:"例）300" %>
+        </div>
+        <div>
+          <div>日付を選んでください</div>
+          <%= f.date_field :date, class:"expensed-day"%>
+        </div>
+        <div>
+          <%= f.submit "変更する" ,class:"btn" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
