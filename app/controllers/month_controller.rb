@@ -1,5 +1,7 @@
 class MonthController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_months, only: :index
+
   def index
     @expenses = Expense.where(user_id: current_user.id).where(created_at: Time.now.all_year)
     time = Time.now

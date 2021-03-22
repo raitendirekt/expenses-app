@@ -1,49 +1,40 @@
-<%= render "shared/header" %>
 <div class="wrapper">
-<%= render "shared/side_bar" %>
-  <div class="top">
-
-    <div class="expense-header">
-    </div>
+  <div class="side-bar">
+    <%= render "shared/side_bar" %>
+  </div>
+  <div class="top-table">
+    <%= render "shared/header" %>
     <div class="create-record">
       <%= link_to "記録する", new_expense_path, class:"post" %>
     </div>
-    <% if user_signed_in? %>
-      <div class="month-main">
-        <div class="monthly-expense">
-          <%= "月別#{@this_year}年の出費#{@year_sum}円" %>
-        </div>
-        <div class="category-expense">
-        <table>
-          <tr>
-            <th>月</th><th>金額</th>
-          </tr>
-          <div class="expense">
-          <tr>
-          <% @months.each do |month| %>
-            <td><%= "#{month}月" %></td>
-            <% amounts = [] %>
-            <% @expenses.each do |expense| %>
-              <% if expense.date.month == month %>
-                <% amounts << expense.amount %>
-              <% end %>
-            <% end %>
-            <% sum = 0 %>
-            <% amounts.each do |n| %>
-              <% sum += n %>
-            <% end %>
-            <td><%= "#{sum}円" %></td>
-          </tr>
-          </div>
+
+    <a class="month">
+      <%= "#{@this_year}年" %>
+    </a>
+    <table>
+      <tr>
+        <th>月</th><th>金額</th>
+      </tr>
+      <div class="expense">
+      <tr>
+      <% @months.each do |month| %>
+        <td><%= "#{month}月" %></td>
+        <% amounts = [] %>
+        <% @expenses.each do |expense| %>
+          <% if expense.date.month == month %>
+            <% amounts << expense.amount %>
           <% end %>
-          </div>
-        </table>
-        </div>
+        <% end %>
+        <% sum = 0 %>
+        <% amounts.each do |n| %>
+          <% sum += n %>
+        <% end %>
+        <td><%= "#{sum}円" %></td>
+      </tr>
       </div>
-    <% else %>
-      <div class="lead-to-login">
-        <%= link_to 'ログインしてください', new_user_session_path, class: "login" %>
+      <% end %>
+      <td><%= "#{@this_year}年の合計" %></td><td><%= "#{@year_sum}円" %></td>
       </div>
-    <% end %>
+    </table>
   </div>
 </div>

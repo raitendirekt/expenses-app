@@ -1,54 +1,39 @@
-<%= render "shared/header" %>
 <div class="wrapper">
-<%= render "shared/side_bar" %>
-  <div class="top">
-    <div class="expense-header">
+  <div class="side-bar">
+    <%= render "shared/side_bar" %>
+  </div>
+  <div class="top-table">
+    <%= render "shared/header" %>
+    <div class="create-record">
+      <%= link_to "記録する", new_expense_path, class:"post" %>
     </div>
-    <% if user_signed_in? %>
-      <div class="create-record">
-        <%= link_to "記録する", new_expense_path, class:"post" %>
-      </div>
-      <div class="month-main">
-        <div class="monthly-expense">
-          <%= "My Page" %>
+    <%= link_to "プロフィールを編集する", edit_user_registration_path, class:"user-edit" %>
+    <table>
+      <tr>
+        <th>出費日</th><th>カテゴリー</th><th>メモ</th><th>金額</th><th>編集</th><th>削除</th>
+      </tr>
+      <% @expenses.each do |expense| %>
+      <tr>
+        <div class="expense">
+          <div class="expense-created_at">
+            <td><%= "#{expense.date.month}月#{expense.date.day}日" %></td>
+          </div>
+          <div class="expense-category">
+            <td><%= expense.category.name %></td>
+          </div>
+          <div class="expense-memo">
+            <td><%= expense.memo %></td>
+          </div>
+          <div class="expense-amount">
+            <td><%= "#{expense.amount}円" %></td>
+          </div>
+          <div class="expense-edit">
+            <td><%= link_to "編集", edit_expense_path(expense.id) %></td>
+            <td><%= link_to "削除", expense_path(expense.id), method: :delete %></td>
+          </div>
         </div>
-        <div class="user-edit">
-          <%= link_to "プロフィールを編集する", edit_user_registration_path %>
-        </div>
-        <div class="category-expense">
-        <table>
-          <tr>
-            <th>出費日</th><th>カテゴリー</th><th>メモ</th><th>金額</th><th>編集</th><th>削除</th>
-          </tr>
-          <% @expenses.each do |expense| %>
-          <tr>
-            <div class="expense">
-              <div class="expense-created_at">
-                <td><%= "#{expense.date.month}月#{expense.date.day}日" %></td>
-              </div>
-              <div class="expense-category">
-                <td><%= expense.category.name %></td>
-              </div>
-              <div class="expense-memo">
-                <td><%= expense.memo %></td>
-              </div>
-              <div class="expense-amount">
-                <td><%= "#{expense.amount}円" %></td>
-              </div>
-              <div>
-                <td><%= link_to "編集", edit_expense_path(expense.id) %></td>
-                <td><%= link_to "削除", expense_path(expense.id), method: :delete %></td>
-              </div>
-            </div>
-           </tr>
-          <% end %>
-        </table>
-        </div>
-        <% else %>
-        <div class="lead-to-login">
-          <%= link_to 'ログインしてください', new_user_session_path, class: "login" %>
-        </div>
-      </div>
-    <% end %>
+        </tr>
+      <% end %>
+    </table>
   </div>
 </div>
