@@ -5,4 +5,10 @@ Rails.application.routes.draw do
   resources :category, only: :index
   resources :month, only: :index
   resources :users, only: :show
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+  resources :relationships, only: [:create, :destroy]
 end

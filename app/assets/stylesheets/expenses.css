@@ -76,6 +76,11 @@ header {
   font-weight: bold;
 }
 
+.user-edit {
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #333333;
+}
 
 .logout {
   text-decoration: none;
@@ -112,8 +117,4 @@ header {
 
 .category {
   display: block;
-}
-
-.user-edit {
-  margin-left: 10px;
 }
