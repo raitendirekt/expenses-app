@@ -9,12 +9,17 @@ class UsersController < ApplicationController
   def following
     @user  = User.find(params[:id])
     @users = @user.followings
-    render 'show_follow'
+    render 'search'
   end
 
   def followers
     @user  = User.find(params[:id])
     @users = @user.followers
-    render 'show_follower'
+    render 'search'
   end
+
+  def search
+    @users = User.search(params[:keyword])
+  end
+
 end
