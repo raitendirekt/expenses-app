@@ -51,6 +51,13 @@
   margin-bottom: 10px;
 }
 
+.confirm-list {
+  display: block;
+  text-decoration: none;
+  color: #a4a4a9;
+  margin-bottom: 10px;
+}
+
 .top-table {
   background-color:  #eaedf6;
   width: calc(100vw - 200px);
