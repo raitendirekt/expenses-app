@@ -140,3 +140,7 @@ header {
 .category {
   display: block;
 }
+
+.search-bar {
+  margin: 40px 0 0 110px;
+}
