@@ -1,0 +1,28 @@
+<div class="wrapper">
+  <div class="side-bar">
+    <%= render "shared/side_bar" %>
+  </div>
+  <div class="top-table">
+    <%= render "shared/header" %>
+    <table>
+      <tr>
+        <th>ニックネーム</th><th>id</th><th>詳細</th>
+      </tr>
+      <% current_user.followers.each do |user| %>
+        <% counter = 0 %>
+        <% user.followers.each do |dummy| %>
+          <% if current_user.id == dummy.id %>
+            <% counter += 1 %>
+          <% end %>
+        <% end %>
+        <% if counter >= 1 %>
+          <tr>
+            <td><%= user.nickname %></td>
+            <td><%= user.user_name %></td>
+            <td><%= link_to '詳細', friend_path(user) %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </table>
+  </div>
+</div>

@@ -3,9 +3,12 @@
 </div>
 <div class="sum-up">
   <% if user_signed_in? %>
-    <ul class="by">
+    <ul class="side-bar-lists">
       <li><%= link_to 'カテゴリー別', category_index_path, class: "category-list" %></li>
       <li><%= link_to '月別', month_index_path, class: "month-list" %></li>
+      <li><%= link_to '友達', friends_path, class: "friends-list" %></li>
+      <li><%= link_to '友達を探す', searches_path, class: "search-list" %></li>
+      <li><%= link_to '友達かも', confirms_path,  class: "confirm-list" %></li>
     </ul>
   <% end %>
 </div>

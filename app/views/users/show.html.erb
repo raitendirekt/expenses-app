@@ -4,10 +4,12 @@
   </div>
   <div class="top-table">
     <%= render "shared/header" %>
+    <div class="follow">
+      <%= render 'stats' %>
+    </div>
     <div class="create-record">
       <%= link_to "記録する", new_expense_path, class:"post" %>
     </div>
-    <%= link_to "プロフィールを編集する", edit_user_registration_path, class:"user-edit" %>
     <table>
       <tr>
         <th>出費日</th><th>カテゴリー</th><th>メモ</th><th>金額</th><th>編集</th><th>削除</th>

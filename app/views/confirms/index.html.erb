@@ -1,0 +1,33 @@
+<div class="wrapper">
+  <div class="side-bar">
+    <%= render "shared/side_bar" %>
+  </div>
+  <div class="top-table">
+    <%= render "shared/header" %>
+    <table>
+      <tr>
+        <th>ニックネーム</th><th>id</th><th>承諾</th>
+      </tr>
+      <% current_user.followers.each do |user| %>
+        <% counter = 0 %>
+        <% user.followers.each do |dummy| %>
+          <% if current_user.id == dummy.id %>
+            <% counter += 1 %>
+          <% end %>
+        <% end %>
+        <% unless counter >= 1 %>
+          <tr>
+            <td><%= user.nickname %> </td>
+            <td><%= user.user_name %></td>
+            <td>
+              <%= form_for(current_user.following_relationships.build(following_id: user.id)) do |f| %>
+                <div><%= f.hidden_field :following_id %></div>
+                <%= f.submit "許可", class: "btn btn-large btn-primary follow-btn" %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
+    </table>
+  </div>
+</div>

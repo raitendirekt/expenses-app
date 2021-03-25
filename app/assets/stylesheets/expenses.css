@@ -30,6 +30,14 @@
   height: calc(100vh - 70px);
 }
 
+.friends-list {
+  display: block;
+  text-decoration: none;
+  color: #a4a4a9;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .category-list {
   display: block;
   text-decoration: none;
@@ -38,6 +46,20 @@
 }
 
 .month-list {
+  display: block;
+  text-decoration: none;
+  color: #a4a4a9;
+  margin-bottom: 30px;
+}
+
+.search-list {
+  display: block;
+  text-decoration: none;
+  color: #a4a4a9;
+  margin-bottom: 10px;
+}
+
+.confirm-list {
   display: block;
   text-decoration: none;
   color: #a4a4a9;
@@ -76,6 +98,11 @@ header {
   font-weight: bold;
 }
 
+.user-edit {
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #333333;
+}
 
 .logout {
   text-decoration: none;
@@ -112,8 +139,4 @@ header {
 
 .category {
   display: block;
-}
-
-.user-edit {
-  margin-left: 10px;
 }
