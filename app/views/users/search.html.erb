@@ -11,8 +11,8 @@
     <% end %>
     <div class="contents row">
       <% @users.each do |user| %>
-        <%= user.nickname %>
         <% unless current_user?(user) %>
+          <%= user.nickname %>
           <% if current_user.following?(user) %>
             <%= form_for(current_user.following_relationships.find_by(following_id: user.id), html: { method: :delete }) do |f| %>
               <%= f.submit "Unfollow", class: "btn btn-large follow-btn" %>
