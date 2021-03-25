@@ -6,7 +6,7 @@
     <%= render "shared/header" %>
     <table>
       <tr>
-        <th>ニックネーム</th><th>id</th><th>詳細</th>
+        <th>ニックネーム</th><th>今月の出費</th><th>比較</th>
       </tr>
       <% current_user.followers.each do |user| %>
         <% counter = 0 %>
@@ -18,8 +18,22 @@
         <% if counter >= 1 %>
           <tr>
             <td><%= user.nickname %></td>
-            <td><%= user.user_name %></td>
-            <td><%= link_to '詳細', friend_path(user) %></td>
+              <% sum = 0 %>
+              <% @expenses.each do |expense| %>
+                <% if user.id == expense.user_id %>
+                  <% sum += expense.amount %>
+                <% end %>
+              <% end %>
+            <td><%= sum %></td>
+              <% a = @month_sum - sum %>
+              <% if a < 0 %>
+                <td><%= "#{a.abs}円多い" %></td>
+              <% elsif a == 0 %>
+                <td><%= "同じ" %>
+              <% else %>
+                <td><%= "#{a}円少ない"%></td>
+              <% end %>
+            
           </tr>
         <% end %>
       <% end %>
