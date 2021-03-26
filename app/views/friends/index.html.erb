@@ -6,7 +6,7 @@
     <%= render "shared/header" %>
     <table>
       <tr>
-        <th>ニックネーム</th><th>今月の出費</th><th>比較</th>
+        <th>ニックネーム</th><th>今月の出費</th><th><%= "#{current_user.nickname}さんより"%></th>
       </tr>
       <% current_user.followers.each do |user| %>
         <% counter = 0 %>

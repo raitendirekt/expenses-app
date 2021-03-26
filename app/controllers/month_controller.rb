@@ -16,11 +16,12 @@ class MonthController < ApplicationController
     @day = Date.today
     @months = []
     12.times do |m|
-      if @day.month + m <= 12
-        @months << @day.month + m
-      else
-        @months << @day.month + m - 12
-      end
+      #if @day.month + m <= 12
+        #@months << @day.month + m
+      #else
+       # @months << @day.month + m - 12
+      #end
+      @months << m + 1
     end
   end
 
