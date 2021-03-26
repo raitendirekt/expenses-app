@@ -10,12 +10,12 @@
 
 # 利用方法
 
-### サインインをする
-### 出費を記録する
-### topページで確認する
-### カテゴリーごと、月ごとに確認する
-### 友達を追加する
-### 友達の出費と比較する
+ - サインインをする
+ - 出費を記録する
+ - topページで確認する
+ - カテゴリーごと、月ごとに確認する
+ - 友達を追加する
+ - 友達の出費と比較する
 
 
 # 目指した問題解決
@@ -34,12 +34,18 @@
 | Column             | Type    | Options                   |
 | ------------------ | ------- | ------------------------- |
 | nickname           | string  | null: false               |
+| user_name          | string  | null: false, unique: true |
 | email              | string  | null: false, unique: true |
 | encrypted_password | string  | null: false               |
 
 ### Association
 
 - has_many :expenses
+- has_many :following_relationships, foreign_key: "follower_id"
+- has_many :followings, through: :following_relationships
+- has_many :follower_relationships, foreign_key: "following_id"
+- has_many :followers, through: :follower_relationships
+
 
 ## Expenses table
 
@@ -53,3 +59,15 @@
 ### Association
 
 - belongs_to :user
+
+## Relationships table
+
+| Column       | Type       | Options           |
+| ------------ | ---------- | ----------------- |
+| follower_id  | integer    | null: false       |
+| following_id | integer    | null: false       |
+
+### Association
+
+- belongs_to :follower, class_name: "User"
+- belongs_to :following, class_name: "User"
