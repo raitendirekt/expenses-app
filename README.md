@@ -48,7 +48,8 @@ deviseを用いた実装。友達の出費と自分の出費を比較し、そ�
 
 ## 機能
 ### 出費保存
-https://user-images.githubusercontent.com/71278326/112833118-3e235680-90d1-11eb-8919-be74616c8b4d.gif
+![969fc99f0d5c9d9db60cf5cf992f413d](https://user-images.githubusercontent.com/71278326/112833118-3e235680-90d1-11eb-8919-be74616c8b4d.gif)
+
 
 
 # テーブル設計
