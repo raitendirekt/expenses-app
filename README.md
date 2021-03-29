@@ -50,9 +50,18 @@ deviseを用いた実装。友達の出費と自分の出費を比較し、そ�
 ### 出費保存
 ![969fc99f0d5c9d9db60cf5cf992f413d](https://user-images.githubusercontent.com/71278326/112833118-3e235680-90d1-11eb-8919-be74616c8b4d.gif)
 ### カテゴリー別に表示
-
-
-
+![7916e79097e95fbc31ab732a5cf351e0](https://user-images.githubusercontent.com/71278326/112834281-c35b3b00-90d2-11eb-8fc7-38163176cf86.gif)
+### 月別に表示
+![cdbeb62ab3564d3136d01d0c15ac364c](https://user-images.githubusercontent.com/71278326/112834428-ed146200-90d2-11eb-9ecd-81afb9d0ba0a.gif)
+### 友達機能
+#### 友達
+![0dae3108587bcfad65ac0b922f66bfed](https://user-images.githubusercontent.com/71278326/112834591-2351e180-90d3-11eb-80ba-9a9a285e3aca.gif)
+#### 友達を探す
+![65b6075243cd562763a9fceaccfbb061](https://user-images.githubusercontent.com/71278326/112834719-48deeb00-90d3-11eb-966b-fe55241a4491.gif)
+#### 友達かも
+![3ce54a7a2d65fb434af766b90edac1fc](https://user-images.githubusercontent.com/71278326/112834798-6744e680-90d3-11eb-8faa-7fd16822c700.gif)
+#### マイページ
+![6773d35d6e68f52b91291939b4a81415](https://user-images.githubusercontent.com/71278326/112834885-804d9780-90d3-11eb-8a44-e225433a3643.gif)
 
 # テーブル設計
 
