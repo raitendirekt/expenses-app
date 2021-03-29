@@ -110,3 +110,9 @@ deviseを用いた実装。友達の出費と自分の出費を比較し、そ�
 
 - belongs_to :follower, class_name: "User"
 - belongs_to :following, class_name: "User"
+
+# ローカルでの操作方法
+## コマンド
+git clone https://github.com/raitendirekt/expenses-app.git
+## 環境
+Rails 6.0.3.5 / Ruby 2.6.5 / MySql
