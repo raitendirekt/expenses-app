@@ -63,6 +63,9 @@ deviseを用いた実装。友達の出費と自分の出費を比較し、そ�
 #### マイページ
 ![6773d35d6e68f52b91291939b4a81415](https://user-images.githubusercontent.com/71278326/112834885-804d9780-90d3-11eb-8a44-e225433a3643.gif)
 
+# ER図
+<img width="758" alt="スクリーンショット 2021-03-29 21 45 24" src="https://user-images.githubusercontent.com/71278326/112838659-403ce380-90d8-11eb-82aa-2ced6c0ee60c.png">
+
 # テーブル設計
 
 ## Users table
