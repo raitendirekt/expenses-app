@@ -1,11 +1,17 @@
-# アプリケーション名
+アプリケーション名
+# Expense App
 
-## Expense App
 
-
-# アプリケーション概要
-
-## 出費管理をすることができる
+## アプリケーション概要
+出費管理をすることができる
+URL: https://expenses-app-34489.herokuapp.com/
+#### テスト用アカウント
+user1
+メールアドレス : test@email
+パスワード    : test11
+user2
+メールアドレス : tom@email
+パスワード    : tom111
 
 
 # 利用方法
